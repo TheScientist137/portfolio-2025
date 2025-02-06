@@ -1,20 +1,16 @@
-import { Link, Outlet } from "react-router";
+import { Outlet } from "react-router";
+import Terminal from "./Terminal";
 
 export default function Layout() {
  return (
   // introducir retro font
-  <div className="min-h-screen bg-retroBlack text-retroGreen">
-   <nav>
-    <Link to='/'>Home</Link>
-    <Link to='/projects'>Projects</Link>
-    <Link to='/contact'>Contact</Link>
-   </nav>
-
+  <div className="min-h-screen bg-retroBlack text-retroGreen p-8">
+   {/* CRT Effect */}
    <main>
     <Outlet />
    </main>
 
-   <footer>This is a footer</footer>
+   <Terminal />
   </div>
  )
 }

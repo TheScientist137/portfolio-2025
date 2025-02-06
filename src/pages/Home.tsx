@@ -1,7 +1,10 @@
+// Add Terminal -- in all pages?
+
 export default function Home() {
  return (
   <div>
-   <h1>Welcome to my portfolio!</h1>
+   <h1>Welcome to my portfolio!</h1> 
+   {/*  Terminal Component */}
   </div>
  )
 }
