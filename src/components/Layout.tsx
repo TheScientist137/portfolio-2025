@@ -1,4 +1,4 @@
-export function Layout() {
+export default function Layout() {
  return (
   <div>
    <p>layout</p>
