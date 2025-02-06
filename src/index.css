@@ -1,6 +1,7 @@
 @import "tailwindcss";
 
-* {
-  margin: 0;
-  padding: 0;
+/* Theme Variables */
+@theme {
+  --color-retroGreen: #00ff00;
+  --color-retroBlack: #0f0f0f;
 }
