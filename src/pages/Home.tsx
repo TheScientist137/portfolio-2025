@@ -1,9 +1,11 @@
-// Add Terminal -- in all pages?
+
+
+// Crear un componente reutilizable para todas las paginas!
 
 export default function Home() {
  return (
   <div>
-   <h1>Welcome to my portfolio!</h1> 
+   <h1>Welcome to my portfolio</h1>
    {/*  Terminal Component => explain commands to travel between pages */}
   </div>
  )

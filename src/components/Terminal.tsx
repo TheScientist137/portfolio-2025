@@ -38,7 +38,7 @@ export default function Terminal() {
  }
 
  return (
-  <div className="border-2">
+<div className="p-2 flex-grow border-2 font-retroFont text-2xl">
    <div> {/* Output Line Container */}
     {output.map((line, index) => (
      <p key={index}>{line}</p>
@@ -46,7 +46,7 @@ export default function Terminal() {
    </div>
 
    <div> {/* Input Container */}
-    <span>[TheScientist-137] $ </span>
+    <span>[TheScientist-137]$ </span>
     <input
      type="text"
      value={input}

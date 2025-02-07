@@ -1,7 +1,16 @@
 @import "tailwindcss";
 
+/* Fonts */
+@font-face {
+  font-family: 'retroTitle';
+  src: url('../public//fonts/karma.future-regular.otf');
+}
+
 /* Theme Variables */
 @theme {
   --color-retroGreen: #00ff00;
   --color-retroBlack: #0f0f0f;
+
+  --font-retroFont: 'VT323', monospace;
+  --font-retroTitle: retroTitle
 }
