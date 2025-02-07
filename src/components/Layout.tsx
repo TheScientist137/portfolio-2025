@@ -11,6 +11,8 @@ export default function Layout() {
    </main>
 
    <Terminal />
+
+   <footer>Footer</footer>
   </div>
  )
 }

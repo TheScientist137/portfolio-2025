@@ -1,5 +1,3 @@
-// Entender y recrear el codigo desde cero!!!!!!!!!!!!!!!!!!!!!!!!!1
-
 import { useState } from "react";
 import { useNavigate } from "react-router";
 
@@ -8,10 +6,8 @@ export default function Terminal() {
  const [output, setOutput] = useState<string[]>([]);
  const navigate = useNavigate();
 
- const handleCommand = (inputCommand: string) => {
-  const trimmedCommand = inputCommand.trim().toLocaleLowerCase(); // input text formmatter
-  // Entender mejor!!!!!
-  if (!trimmedCommand) return; // Does not proccess empty commands
+ const handleInputCommand = (inputCommand: string) => {
+  if (!inputCommand) return; // Does not proccess empty commands
 
   setOutput(prev => [...prev, `> ${inputCommand}`])
 
@@ -55,7 +51,7 @@ export default function Terminal() {
      type="text"
      value={input}
      onChange={(e) => setInput(e.target.value)}
-     onKeyDown={(e) => e.key === 'Enter' && handleCommand(input)}
+     onKeyDown={(e) => e.key === 'Enter' && handleInputCommand(input)}
      className="outline-none"
     />
     <span className="w-24 blink" />
