@@ -3,7 +3,7 @@
 /* Fonts */
 @font-face {
   font-family: 'retroTitle';
-  src: url('../public//fonts/karma.future-regular.otf');
+  src: url('/fonts/karma.future-regular.otf');
 }
 
 /* Theme Variables */

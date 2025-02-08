@@ -6,7 +6,7 @@ import Terminal from "./Terminal";
 export default function Layout() {
  return (
   // introducir retro font -- modificar layout - colocar todo bien
-  <div className="min-h-screen flex flex-col justify-between bg-retroBlack text-xl text-retroGreen">
+  <div className="h-screen flex flex-col justify-between bg-retroBlack text-xl text-retroGreen">
    {/* CRT Effect */}
 
    {/* Title container -- Modificar para añadir imagen, titulo a la izquierda responsivezz */}

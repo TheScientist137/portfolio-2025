@@ -1,9 +1,16 @@
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 
 export default function Terminal() {
   const [input, setInput] = useState('');
   const [output, setOutput] = useState<string[]>([]);
   const inputRef = useRef<HTMLInputElement>(null); // Reference input to terminal div for click focus 
+  const outputRef = useRef<HTMLDivElement>(null);
+
+  // scroll output div
+  useEffect(() => {
+    if (outputRef.current) outputRef.current.scrollTop = outputRef.current.scrollHeight;
+
+  }, [output])
 
   const handleInputCommand = (inputCommand: string) => {
     if (!inputCommand) return; // Does not proccess empty commands
@@ -11,21 +18,21 @@ export default function Terminal() {
     setOutput(prev => [...prev, `> ${inputCommand}`])
 
     switch (inputCommand) {
-      case 'about':
-        setOutput(prev => [...prev, 'Guillermo Casado - Fullstack Developer']);
+      case 'norkus':
+        setOutput(prev => [...prev, 'Norkus es un chico un poco gay, todavia le queda mucho que hacer... muchos anos que oler y senderos que recorrer, pero ante todo norkus es sukron al revés :)']);
         break;
       case 'projects':
         setOutput(prev => [...prev, 'Projects: ']);
         break;
       case 'contact':
-        setOutput(prev => [...prev, 'You can contact me on: ']);
+        setOutput(prev => [...prev, 'You can contact me on: mi ano']);
         break;
       case 'clear':
         setOutput([]); // Clean output and finish ejecution
         setInput('');
         return;
       case 'help':
-        setOutput(prev => [...prev, 'Available commands: about, home, projects, contact, clear, help']);
+        setOutput(prev => [...prev, 'Available commands: about, home, projects, contact, clear, norkus, help']);
         break;
       default:
         setOutput(prev => [...prev, `Command not found: ${inputCommand}`])
@@ -35,16 +42,22 @@ export default function Terminal() {
 
   return (
     <div
-      className="flex-grow p-2 border-2 font-retroFont text-2xl"
+      className="h-70 flex flex-col p-2 border-2 font-retroFont text-2xl"
       onClick={() => inputRef.current?.focus()} // Focus input when click terminal div
     >
-      <div className=""> {/* Output Line Container */}
+
+      {/* Output Container with scroll */}
+      <div
+        className="overflow-y-auto"
+        ref={outputRef}
+      >
         {output.map((line, index) => (
           <p key={index}>{line}</p>
         ))}
       </div>
 
-      <div> {/* Input Container */}
+      {/* Input Container */}
+      <div className="">
         <span>[TheScientist-137]$ </span>
         <input
           ref={inputRef}
