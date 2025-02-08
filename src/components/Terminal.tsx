@@ -1,5 +1,7 @@
 import { useState, useRef, useEffect } from "react";
 
+// mostrar resultado correcto debajo de input o not found - comando dentro del output
+
 export default function Terminal() {
   const [input, setInput] = useState('');
   const [output, setOutput] = useState<string[]>([]);
@@ -15,7 +17,7 @@ export default function Terminal() {
   const handleInputCommand = (inputCommand: string) => {
     if (!inputCommand) return; // Does not proccess empty commands
 
-    setOutput(prev => [...prev, `> ${inputCommand}`])
+    setOutput(prev => [...prev, `[TheScientist-137]$ > ${inputCommand}`])
 
     switch (inputCommand) {
       case 'norkus':
@@ -42,7 +44,7 @@ export default function Terminal() {
 
   return (
     <div
-      className="h-70 flex flex-col p-2 border-2 font-retroFont text-2xl"
+      className="h-full flex flex-col p-2 border-2 font-retroFont text-2xl"
       onClick={() => inputRef.current?.focus()} // Focus input when click terminal div
     >
 
@@ -57,17 +59,17 @@ export default function Terminal() {
       </div>
 
       {/* Input Container */}
-      <div className="">
-        <span>[TheScientist-137]$ </span>
+      <div className="flex bg-stone-900">
+        <span className="pr-2">[TheScientist-137]$</span>
         <input
           ref={inputRef}
           type="text"
           value={input}
           onChange={(e) => setInput(e.target.value)}
           onKeyDown={(e) => e.key === 'Enter' && handleInputCommand(input)}
-          className="outline-none"
+          className="w-full outline-none"
         />
-        <span className="w-24 blink" />
+        <span className="blink" />
       </div>
     </div>
   )
