@@ -1,11 +1,9 @@
 import { useState, useRef } from "react";
-import { useNavigate } from "react-router";
 
 export default function Terminal() {
   const [input, setInput] = useState('');
   const [output, setOutput] = useState<string[]>([]);
   const inputRef = useRef<HTMLInputElement>(null); // Reference input to terminal div for click focus 
-  const navigate = useNavigate();
 
   const handleInputCommand = (inputCommand: string) => {
     if (!inputCommand) return; // Does not proccess empty commands
@@ -16,14 +14,11 @@ export default function Terminal() {
       case 'about':
         setOutput(prev => [...prev, 'Guillermo Casado - Fullstack Developer']);
         break;
-      case 'home':
-        navigate('/');
-        break;
       case 'projects':
-        navigate('/projects');
+        setOutput(prev => [...prev, 'Projects: ']);
         break;
       case 'contact':
-        navigate('/contact');
+        setOutput(prev => [...prev, 'You can contact me on: ']);
         break;
       case 'clear':
         setOutput([]); // Clean output and finish ejecution
@@ -40,10 +35,10 @@ export default function Terminal() {
 
   return (
     <div
-      className="p-2 flex-grow border-2 font-retroFont text-2xl"
+      className="flex-grow p-2 border-2 font-retroFont text-2xl"
       onClick={() => inputRef.current?.focus()} // Focus input when click terminal div
-      >
-      <div> {/* Output Line Container */}
+    >
+      <div className=""> {/* Output Line Container */}
         {output.map((line, index) => (
           <p key={index}>{line}</p>
         ))}
