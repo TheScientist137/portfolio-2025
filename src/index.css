@@ -10,6 +10,7 @@
 @theme {
   --color-retroGreen: #00ff00;
   --color-retroBlack: #0f0f0f;
+  --color-crtEffect: text-shadow: 0 0 5px rgba(0, 255, 0, 0.7), 0 0 10px rgba(0, 255, 0, 0.7), 0 0 15px rgba(0, 255, 0, 0.7);
 
   --font-retroFont: 'VT323', monospace;
   --font-retroTitle: retroTitle
