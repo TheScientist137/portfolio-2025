@@ -1,6 +1,6 @@
 import { responses } from "./responses"
 
-// Mejorar y entender codigo !!!!!!!!!!!!!!!!!!!!
+// Mejorar y entender codigo !!!!!!!!!!!!!!!!!!!! => Refactorizar
 
 type props = {
  input: string,
@@ -20,7 +20,6 @@ export default function handleInputCommand({ input, setInput, setOutput }: props
   projects: () => responses.projects,
   contact: () => responses.contact,
   help: () => responses.help,
-
   clear: () => setOutput([])
  }
 

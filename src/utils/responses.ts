@@ -1,4 +1,4 @@
-export const responses = {
+export const responses = { // Completar con datos reales -- usar objetos anidados o arrays?
  about: 'Guillermo Casado Noya',
  projects: 'Projects',
  contact: 'Contact me on: ',
