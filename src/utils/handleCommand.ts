@@ -17,10 +17,9 @@ export default function handleInputCommand({ input, setInput, setOutput }: props
     setOutput([]);
     setInput('');
     return;
-  } 
-  
-  // Add user input to the output -- reubicar??
+  }
 
+  // Refactor -- Call setOutput once
   if (commands[input]) {
     setOutput(prev => [...prev, commands[input]]);
     console.log(commands[input]);

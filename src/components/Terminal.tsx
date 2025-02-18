@@ -1,12 +1,13 @@
 import { useState, useRef, useEffect } from "react";
 import handleInputCommand from "../utils/handleCommand";
+import Output from "./Output";
 import { command } from "../utils/commands";
 
 export default function Terminal() {
   const [input, setInput] = useState('');
   const [output, setOutput] = useState<(string | command)[]>([]);
   const inputRef = useRef<HTMLInputElement>(null); // Reference input to terminal div for click focus 
-  const outputRef = useRef<HTMLDivElement>(null);
+  const outputRef = useRef<HTMLDivElement>(null); // Entender mejor
 
   // generates scroll on the output div when output reaches the div`s height (everytime output changes)
   useEffect(() => {
@@ -14,29 +15,31 @@ export default function Terminal() {
     console.log(output);
   }, [output]);
 
+
+  // Handle focus input when click terminal div
+  const handleTerminalClick = () => {
+    if (inputRef.current) inputRef.current.focus();
+  }
+
+  // Handle input value change event
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => setInput(e.target.value);
+
+  // Handle enter key down event
   const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
     if (e.key === 'Enter') {
-      setOutput(prev => [...prev, `[TheScientist-137]$ > ${input}`]);
+      setOutput(prev => [...prev, `[TheScientist-137]$ > ${input}`]); // Add user input to the output
       handleInputCommand({ input, setInput, setOutput });
     }
   }
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => setInput(e.target.value);
-
   return (
     <div
       className="h-full flex flex-col p-2 text-lg text-retroGreen bg-stone-900"
-      onClick={() => inputRef.current?.focus()} // Focus input when click terminal div (Entender mejor) -- refactor function on top
+      onClick={handleTerminalClick}
     >
       {/* Output Container with scroll */}
-      <div
-        className="overflow-y-auto"
-        ref={outputRef}
-      >
-        {output.map((line, index) => ( // mejorar 
-          // Manejar casos de projects y contact => links -- mejorar vista de output (column - div?)
-          <p key={index} className="">{line}</p>
-        ))}
+      <div className="overflow-y-auto" ref={outputRef}>
+        {output.map((line, index) => <Output key={index} outputLine={line} />)}
       </div>
 
       {/* Input Container */}
