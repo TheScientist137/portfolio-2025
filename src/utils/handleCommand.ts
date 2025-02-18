@@ -1,40 +1,33 @@
-import { responses } from "./responses"
+import { command, commands } from "./commands";
 
 // Mejorar y entender codigo !!!!!!!!!!!!!!!!!!!! => Refactorizar
 
 type props = {
- input: string,
- setInput: React.Dispatch<React.SetStateAction<string>>,
- setOutput: React.Dispatch<React.SetStateAction<string[]>>
+  input: string,
+  setInput: React.Dispatch<React.SetStateAction<string>>,
+  setOutput: React.Dispatch<React.SetStateAction<(string | command)[]>>
 }
 
 export default function handleInputCommand({ input, setInput, setOutput }: props) {
- if (!input) return; // Don't proccess empty commands 
+  // Don't proccess empty commands 
+  if (!input) return;
 
- // poner color en nombre de usuario 
- setOutput(prev => [...prev, `[TheScientist-137]$ > ${input}`]); // Set output line
+  // Handle clear command
+  if (input === 'clear') {
+    setOutput([]);
+    setInput('');
+    return;
+  } 
+  
+  // Add user input to the output -- reubicar??
 
- // Leer teoria de Record! super ùtil -- Cambiar a objeto - Refactorizar
- const commands: Record<string, () => void> = {
-  about: () => responses.about,
-  projects: () => responses.projects,
-  contact: () => responses.contact,
-  help: () => responses.help,
-  clear: () => setOutput([])
- }
-
- // Cambiar
- const command = commands[input];
-
- if (command) {
-  const result = command();
-
-  if (typeof result === "string") {
-   setOutput((prev) => [...prev, result]);  
+  if (commands[input]) {
+    setOutput(prev => [...prev, commands[input]]);
+    console.log(commands[input]);
+  } else {
+    setOutput(prev => [...prev, 'Command not found']);
   }
- } else {
-  setOutput((prev) => [...prev, `Command not found: ${input}`]);
- }
 
- setInput('');
+  // Clear input
+  setInput('');
 }

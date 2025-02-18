@@ -43,7 +43,7 @@ export default function Layout() { // cambiar nombre -- distribucion componentes
     </div>
    </div>
 
-   {/* Manejar parrafo dinamicamente */}
+   {/* Manejar parrafo dinamicamente -- mostrar con consola vacia */}
    <p className="py-2 text-lg text-center font-retroFont">
     Hello and welcome :) please type help to see a list of available commands
    </p>
