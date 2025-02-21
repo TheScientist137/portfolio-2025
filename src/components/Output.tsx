@@ -16,14 +16,17 @@ export default function Output({ outputLine }: props) {
    <p>{outputLine.description}</p>
 
    {outputLine.links && outputLine.links.map((link, index) => (
-    <a key={index} href={link.url} target="_blank" rel="noreferrer" className="block">
-     {link.name}: {link.description}
-    </a>
+    <div key={index} className="pl-2">
+     <a href={link.url} target="_blank" rel="noreferrer" className="text-blue-800 hover:underline">
+      {link.name}:
+     </a>
+     <span className="ml-2">{link.description}</span>
+    </div>
    ))}
 
    {outputLine.contact && outputLine.contact.map((contact, index) => (
     <p key={index} className="block">
-     {contact.way}
+     {contact.way} {contact.data}
     </p>
    ))}
   </div>

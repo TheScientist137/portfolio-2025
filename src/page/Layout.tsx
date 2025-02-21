@@ -31,13 +31,13 @@ export default function Layout() { // cambiar nombre -- distribucion componentes
 
      <div className="pt-2 px-1 flex flex-col gap-1 text-base font-retroFont">
       <a href="https://www.linkedin.com/in/guillermo-casado-noya-209b45268/" target="_blank" rel="noreferrer" className="flex justify-between items-center">
-       <span>Linkedin</span> <RiLinkedinBoxLine className='h-5 w-5' />
+       <span className='hover:underline'>Linkedin</span> <RiLinkedinBoxLine className='h-5 w-5' />
       </a>
       <a href="https://github.com/TheScientist137" target="_blank" rel="noreferrer" className="flex justify-between items-center">
-       <span>GitHub</span> <FaGithub className='h-5 w-5' />
+       <span className='hover:underline'>GitHub</span> <FaGithub className='h-5 w-5' />
       </a>
       <a href="curriculum-2025.pdf" target="_blank" rel="noreferrer" className="flex justify-between items-center">
-       <span>Resume</span> <TbFileCv className='h-5 w-5' />
+       <span className='hover:underline'>Resume</span> <TbFileCv className='h-5 w-5' />
       </a>
      </div>
     </div>

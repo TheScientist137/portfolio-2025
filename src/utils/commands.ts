@@ -5,7 +5,8 @@ type link = {
 }
 
 type contact = {
- way: string
+ way: string,
+ data: string
 }
 
 export type command = {
@@ -20,15 +21,15 @@ export const commands: Record<string, command> = {
  projects: {
   description: 'Here are some of my projects:',
   links: [
-   { name: 'TelescopEcommerce', description: 'Simple astronomy e-commerce',  url: 'https://github.com/TheScientist137?tab=repositories' },
-   { name: 'Project 2', description: 'Simple console based portfolio',  url: 'https://github.com/TheScientist137?tab=repositories' }
+   { name: 'TelescopEcommerce', description: 'Simple astronomy e-commerce', url: 'https://github.com/TheScientist137?tab=repositories' },
+   { name: 'Portfolio 2025', description: 'Simple console based portfolio', url: 'https://github.com/TheScientist137?tab=repositories' }
   ]
  },
  contact: {
   description: 'You can contact me on:',
   contact: [
-   { way: 'Tel: +34 628833702' },
-   { way: 'Email: TheScientist137@outlook.es' }
+   { way: 'Tel:', data: '+34 628833702' },
+   { way: 'Email:', data: 'TheScientist137@outlook.es' }
   ]
  }
 };

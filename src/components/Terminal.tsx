@@ -34,7 +34,7 @@ export default function Terminal() {
   }
 
 
-  // Refactor and inprove the jsx
+  // Refactor and inprove the jsx -- padding-spaces, colors
 
   return (
     <div
