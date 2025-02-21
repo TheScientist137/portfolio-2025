@@ -22,7 +22,7 @@ export const commands: Record<string, command> = {
   description: 'Here are some of my projects:',
   links: [
    { name: 'TelescopEcommerce', description: 'Simple astronomy e-commerce', url: 'https://github.com/TheScientist137?tab=repositories' },
-   { name: 'Portfolio 2025', description: 'Simple console based portfolio', url: 'https://github.com/TheScientist137?tab=repositories' }
+   { name: 'Portfolio 2025', description: 'Simple console based portfolio', url: 'https://github.com/TheScientist137/portfolio-2025' }
   ]
  },
  contact: {
