@@ -17,7 +17,7 @@ export default function Output({ outputLine }: props) {
 
    {outputLine.links && outputLine.links.map((link, index) => (
     <div key={index} className="pl-2">
-     <a href={link.url} target="_blank" rel="noreferrer" className="text-blue-800 hover:underline">
+     <a href={link.url} target="_blank" rel="noreferrer" className="text-blue-600 hover:underline">
       {link.name}:
      </a>
      <span className="ml-2">{link.description}</span>
@@ -25,8 +25,9 @@ export default function Output({ outputLine }: props) {
    ))}
 
    {outputLine.contact && outputLine.contact.map((contact, index) => (
-    <p key={index} className="block">
-     {contact.way} {contact.data}
+    <p key={index} className="pl-2">
+     <span className="text-blue-600">{contact.way}</span>
+     <span className="ml-2">{contact.data}</span>
     </p>
    ))}
   </div>

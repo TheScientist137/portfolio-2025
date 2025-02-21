@@ -16,7 +16,7 @@ export type command = {
 }
 
 export const commands: Record<string, command> = {
- help: { description: 'Available commands: about, projects, contact, help, clear' },
+ help: { description: 'commands: about, projects, contact, help, clear' },
  about: { description: 'Desarrollador web full stack y técnico en electrónica con experiencia endiseño, implementación y mantenimiento de sistemas tecnológicos.Especializado en desarrollo de aplicaciones web, programación demicrocontroladores, soluciones IoT y Linux combinando habilidades desoftware y hardware. Enfocado en la resolución de problemas, lainnovación y el aprendizaje continuo para aportar valor en proyectosmultidisciplinarios.' },
  projects: {
   description: 'Here are some of my projects:',
@@ -28,8 +28,8 @@ export const commands: Record<string, command> = {
  contact: {
   description: 'You can contact me on:',
   contact: [
-   { way: 'Tel:', data: '+34 628833702' },
-   { way: 'Email:', data: 'TheScientist137@outlook.es' }
+   { way: 'Email:', data: 'TheScientist137@outlook.es' },
+   { way: 'Number:', data: '+34 628833702' }
   ]
  }
 };

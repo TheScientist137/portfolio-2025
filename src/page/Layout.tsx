@@ -30,13 +30,22 @@ export default function Layout() { // cambiar nombre -- distribucion componentes
      <img src={image} alt="Guillermo Casado Noya" className="w-[100px] h[112px]" />
 
      <div className="pt-2 px-1 flex flex-col gap-1 text-base font-retroFont">
-      <a href="https://www.linkedin.com/in/guillermo-casado-noya-209b45268/" target="_blank" rel="noreferrer" className="flex justify-between items-center">
+      <a
+       href="https://www.linkedin.com/in/guillermo-casado-noya-209b45268/"
+       target="_blank" rel="noreferrer"
+       className="flex justify-between items-center hover:text-blue-600">
        <span className='hover:underline'>Linkedin</span> <RiLinkedinBoxLine className='h-5 w-5' />
       </a>
-      <a href="https://github.com/TheScientist137" target="_blank" rel="noreferrer" className="flex justify-between items-center">
+      <a
+       href="https://github.com/TheScientist137"
+       target="_blank" rel="noreferrer"
+       className="flex justify-between items-center hover:text-blue-600">
        <span className='hover:underline'>GitHub</span> <FaGithub className='h-5 w-5' />
       </a>
-      <a href="curriculum-2025.pdf" target="_blank" rel="noreferrer" className="flex justify-between items-center">
+      <a
+       href="curriculum-2025.pdf"
+       target="_blank" rel="noreferrer"
+       className="flex justify-between items-center hover:text-blue-600">
        <span className='hover:underline'>Resume</span> <TbFileCv className='h-5 w-5' />
       </a>
      </div>
@@ -47,6 +56,7 @@ export default function Layout() { // cambiar nombre -- distribucion componentes
    <p className="py-2 text-lg text-center font-retroFont">
     Hello and welcome :) please type help to see a list of available commands
    </p>
+   <p>Still on version Beta</p>
 
    {/* Terminal Container */}
    <div className="flex-grow overflow-hidden font-retroFont">
