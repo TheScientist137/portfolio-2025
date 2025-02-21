@@ -52,10 +52,10 @@ export default function Layout() { // cambiar nombre -- distribucion componentes
     </div>
    </div>
 
-   <p>Still on version Beta</p>
    {/* Manejar parrafo dinamicamente -- mostrar con consola vacia */}
    <p className="py-2 text-lg text-center font-retroFont">
     Hello and welcome :) please type help to see a list of available commands
+   <p>Still on version Beta</p>
    </p>
 
    {/* Terminal Container */}
