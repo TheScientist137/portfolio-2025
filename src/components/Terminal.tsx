@@ -15,6 +15,7 @@ export default function Terminal() {
     console.log(output);
   }, [output]);
 
+  // Mover funciones a un archivo separado????
 
   // Handle focus input when click terminal div
   const handleTerminalClick = () => {
@@ -31,6 +32,9 @@ export default function Terminal() {
       handleInputCommand({ input, setInput, setOutput });
     }
   }
+
+
+  // Refactor and inprove the jsx
 
   return (
     <div

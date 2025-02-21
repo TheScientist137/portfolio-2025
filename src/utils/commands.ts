@@ -1,13 +1,35 @@
+type link = {
+ name: string,
+ description: string
+ url: string
+}
+
+type contact = {
+ way: string
+}
+
 export type command = {
  description: string,
- links?: Array<string>
+ links?: Array<link>
+ contact?: Array<contact>
 }
-// Mover a archivo separado
-// Objeto con las respuestas para cada comando
+
 export const commands: Record<string, command> = {
  help: { description: 'Available commands: about, projects, contact, help, clear' },
- about: { description: 'Guillermo' },
- projects: { description: 'Here are some of my projects:', links: ['link1', 'link2'] },
- contact: { description: 'You can contact me on:', links: ['link1', 'link2'] }
+ about: { description: 'Desarrollador web full stack y técnico en electrónica con experiencia endiseño, implementación y mantenimiento de sistemas tecnológicos.Especializado en desarrollo de aplicaciones web, programación demicrocontroladores, soluciones IoT y Linux combinando habilidades desoftware y hardware. Enfocado en la resolución de problemas, lainnovación y el aprendizaje continuo para aportar valor en proyectosmultidisciplinarios.' },
+ projects: {
+  description: 'Here are some of my projects:',
+  links: [
+   { name: 'TelescopEcommerce', description: 'Simple astronomy e-commerce',  url: 'https://github.com/TheScientist137?tab=repositories' },
+   { name: 'Project 2', description: 'Simple console based portfolio',  url: 'https://github.com/TheScientist137?tab=repositories' }
+  ]
+ },
+ contact: {
+  description: 'You can contact me on:',
+  contact: [
+   { way: 'Tel: +34 628833702' },
+   { way: 'Email: TheScientist137@outlook.es' }
+  ]
+ }
 };
 
