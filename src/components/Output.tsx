@@ -6,9 +6,21 @@ type props = {
 
 export default function Output({ outputLine }: props) {
  // Show input command outpout
- if (typeof outputLine === 'string') return <p className="text-green-300">{outputLine}</p>
+ const prompt = "[TheScientist-137]$ >";
 
- // Change colors on outputlines links and contact!!!!!!!!!!!!!
+ // Si es un string, representa un comando ingresado por el usuario
+ if (typeof outputLine === "string") {
+  if (outputLine.startsWith("Command not found")) {
+   return <p className="text-red-400">{outputLine}</p>; // Sin prompt, en rojo
+  }
+
+  return (
+   <p>
+    <span className="text-green-300">{prompt}</span>
+    <span className="text-white ml-2">{outputLine}</span>
+   </p>
+  );
+ }
 
  // Show result output
  return (
@@ -26,7 +38,7 @@ export default function Output({ outputLine }: props) {
 
    {outputLine.contact && outputLine.contact.map((contact, index) => (
     <p key={index} className="pl-4">
-     <span className="text-blue-600">{contact.way}</span>
+     <span className="text-cyan-600">{contact.way}</span>
      <span className="ml-2">{contact.data}</span>
     </p>
    ))}

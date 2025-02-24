@@ -28,7 +28,7 @@ export default function Terminal() {
   // Handle enter key down event
   const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
     if (e.key === 'Enter') {
-      setOutput(prev => [...prev, `[TheScientist-137]$ > ${input}`]); // Add user input to the output
+      setOutput(prev => [...prev, input]); // Add user input to the output
       handleInputCommand({ input, setInput, setOutput });
     }
   }
