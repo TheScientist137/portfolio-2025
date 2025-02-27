@@ -11,7 +11,7 @@ export default function Output({ outputLine }: props) {
  // Si es un string, representa un comando ingresado por el usuario
  if (typeof outputLine === "string") {
   if (outputLine.startsWith("Command not found")) {
-   return <p className="text-red-400 text-md md:text-lg">{outputLine}</p>; // Sin prompt, en rojo
+   return <p className="pl-2 text-red-400 text-md md:text-lg">{outputLine}</p>; // Sin prompt, en rojo
   }
 
   return (

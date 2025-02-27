@@ -14,26 +14,26 @@ export default function Presentation() {
    </div>
 
    {/* Image - Resume Container (refactor */}
-   <div className='my-2 flex items-center'>
+   <div className='my-2 flex items-center gap-4 md:gap-4'>
     <img src={image} alt="Guillermo Casado Noya" className="w-[80px] h[92px]" />
 
-    <div className="pt-2 px-1 flex flex-col gap-1 text-sm font-retroFont">
+    <div className="pt-2 px-1 flex flex-col gap-1 text-sm md:text-lg font-retroFont">
      <a
       href="https://www.linkedin.com/in/guillermo-casado-noya-209b45268/"
       target="_blank" rel="noreferrer"
-      className="flex justify-between items-center hover:text-blue-600">
+      className="flex justify-between items-center hover:text-blue-600 w-20 md:w-24">
       <span className='hover:underline'>Linkedin</span> <RiLinkedinBoxLine className='h-5 w-5' />
      </a>
      <a
       href="https://github.com/TheScientist137"
       target="_blank" rel="noreferrer"
-      className="flex justify-between items-center hover:text-blue-600">
+      className="flex justify-between items-center hover:text-blue-600 w-20 md:w-24">
       <span className='hover:underline'>GitHub</span> <FaGithub className='h-5 w-5' />
      </a>
      <a
       href="curriculum-2025.pdf"
       target="_blank" rel="noreferrer"
-      className="flex justify-between items-center hover:text-blue-600">
+      className="flex justify-between items-center hover:text-blue-600 w-20 md:w-24">
       <span className='hover:underline'>Resume</span> <TbFileCv className='h-5 w-5' />
      </a>
     </div>
