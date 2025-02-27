@@ -33,32 +33,32 @@ export default function Terminal() {
     }
   }
 
-
-  // Refactor and inprove the jsx -- padding-spaces, colors
-
   return (
-    <div
-      className="h-full flex flex-col p-2 text-lg text-retroGreen bg-stone-900"
-      onClick={handleTerminalClick}
-    >
-      {/* Output Container with scroll */}
-      <div className="overflow-y-auto" ref={outputRef}>
-        {output.map((line, index) => <Output key={index} outputLine={line} />)}
-      </div>
+    <div className="mx-8 flex-grow overflow-hidden font-retroFont">
+      <div
+        className="h-full rounded-md flex flex-col p-2 text-sm text-retroGreen bg-stone-800"
+        onClick={handleTerminalClick}
+      >
+        {/* Output Container with scroll */}
+        <div className="overflow-y-auto" ref={outputRef}>
+          {output.map((line, index) => <Output key={index} outputLine={line} />)}
+        </div>
 
-      {/* Input Container */}
-      <div className="flex bg-stone-800">
-        <span className="pr-2 text-green-300">[TheScientist-137]$</span>
-        <input
-          ref={inputRef}
-          type="text"
-          value={input}
-          onChange={handleChange}
-          onKeyDown={handleKeyDown}
-          className="w-full outline-none"
-        />
-        <span className="blink" />
+        {/* Input Container */}
+        <div className="flex rounded-sm bg-stone-700">
+          <span className="my-auto pr-1 text-green-300 text-sm">[TheScientist-137]$</span>
+          <input
+            ref={inputRef}
+            type="text"
+            value={input}
+            onChange={handleChange}
+            onKeyDown={handleKeyDown}
+            className="w-full outline-none text-sm"
+          />
+          <span className="blink" />
+        </div>
       </div>
     </div>
+
   )
 }

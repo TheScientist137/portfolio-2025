@@ -25,10 +25,10 @@ export default function Output({ outputLine }: props) {
  // Show result output
  return (
   <div>
-   <p className="ml-2">{outputLine.description}</p>
+   <p className="px-2 text-sm">{outputLine.description}</p>
 
    {outputLine.links && outputLine.links.map((link, index) => (
-    <div key={index} className="pl-4">
+    <div key={index} className="pl-2">
      <a href={link.url} target="_blank" rel="noreferrer" className="text-blue-600 hover:underline">
       {link.name}:
      </a>
@@ -37,7 +37,7 @@ export default function Output({ outputLine }: props) {
    ))}
 
    {outputLine.contact && outputLine.contact.map((contact, index) => (
-    <p key={index} className="pl-4">
+    <p key={index} className="pl-2">
      <span className="text-cyan-600">{contact.way}</span>
      <span className="ml-2">{contact.data}</span>
     </p>
