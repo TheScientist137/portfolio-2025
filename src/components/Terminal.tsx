@@ -34,7 +34,7 @@ export default function Terminal() {
   }
 
   return (
-    <div className="mx-8 flex-grow overflow-hidden font-retroFont">
+    <div className="mx-8 md:mx-28 lg:mx-42 xl:mx-64 2xl:mx-82 flex-grow overflow-hidden font-retroFont">
       <div
         className="h-full rounded-md flex flex-col p-2 text-sm text-retroGreen bg-stone-800"
         onClick={handleTerminalClick}
@@ -46,14 +46,14 @@ export default function Terminal() {
 
         {/* Input Container */}
         <div className="flex rounded-sm bg-stone-700">
-          <span className="my-auto pr-1 text-green-300 text-sm">[TheScientist-137]$</span>
+          <span className="my-auto pr-1 text-green-300 text-sm md:text-lg">[TheScientist-137]$</span>
           <input
             ref={inputRef}
             type="text"
             value={input}
             onChange={handleChange}
             onKeyDown={handleKeyDown}
-            className="w-full outline-none text-sm"
+            className="w-full outline-none text-md md:text-lg"
           />
           <span className="blink" />
         </div>

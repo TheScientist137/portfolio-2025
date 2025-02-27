@@ -17,7 +17,7 @@ export default function Layout() { // cambiar nombre -- distribucion componentes
    <Presentation />
 
    {/* Manejar parrafo dinamicamente -- mostrar con consola vacia */}
-   <p className="text-sm text-center font-retroFont">
+   <p className="text-sm sm:text-lg text-center font-retroFont">
     Welcome :) type help to see a list of available commands
    </p>
 

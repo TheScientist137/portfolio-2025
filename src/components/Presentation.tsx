@@ -9,8 +9,8 @@ export default function Presentation() {
   <div className="mt-2 flex flex-col items-center">
    {/* Title Container */}
    <div className="flex flex-col">
-    <h1 className="text-4xl text-center font-retroTitle">Guillermo Casado</h1>
-    <h2 className='text-sm text-center font-retroFont'>Software Developer / Electronic Technician</h2>
+    <h1 className="text-4xl sm:text-5xl text-center font-retroTitle">Guillermo Casado</h1>
+    <h2 className='text-sm sm:text-lg text-center font-retroFont'>Software Developer / Electronic Technician</h2>
    </div>
 
    {/* Image - Resume Container (refactor */}

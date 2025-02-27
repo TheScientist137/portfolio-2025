@@ -11,11 +11,11 @@ export default function Output({ outputLine }: props) {
  // Si es un string, representa un comando ingresado por el usuario
  if (typeof outputLine === "string") {
   if (outputLine.startsWith("Command not found")) {
-   return <p className="text-red-400">{outputLine}</p>; // Sin prompt, en rojo
+   return <p className="text-red-400 text-md md:text-lg">{outputLine}</p>; // Sin prompt, en rojo
   }
 
   return (
-   <p>
+   <p className="text-md md:text-lg">
     <span className="text-green-300">{prompt}</span>
     <span className="text-white ml-2">{outputLine}</span>
    </p>
@@ -24,12 +24,12 @@ export default function Output({ outputLine }: props) {
 
  // Show result output
  return (
-  <div>
-   <p className="px-2 text-sm">{outputLine.description}</p>
+  <div className="text-md md:text-lg">
+   <p className="px-2">{outputLine.description}</p>
 
    {outputLine.links && outputLine.links.map((link, index) => (
     <div key={index} className="pl-2">
-     <a href={link.url} target="_blank" rel="noreferrer" className="text-blue-600 hover:underline">
+     <a href={link.url} target="_blank" rel="noreferrer" className="text-cyan-600 hover:underline">
       {link.name}:
      </a>
      <span className="ml-2">{link.description}</span>
