@@ -7,15 +7,12 @@ export default function Terminal() {
   const [input, setInput] = useState('');
   const [output, setOutput] = useState<(string | command)[]>([]);
   const inputRef = useRef<HTMLInputElement>(null); // Reference input to terminal div for click focus 
-  const outputRef = useRef<HTMLDivElement>(null); // Entender mejor
+  const outputRef = useRef<HTMLDivElement>(null); 
 
   // generates scroll on the output div when output reaches the div`s height (everytime output changes)
   useEffect(() => {
     if (outputRef.current) outputRef.current.scrollTop = outputRef.current.scrollHeight;
-    console.log(output);
   }, [output]);
-
-  // Mover funciones a un archivo separado????
 
   // Handle focus input when click terminal div
   const handleTerminalClick = () => {
@@ -46,16 +43,15 @@ export default function Terminal() {
 
         {/* Input Container */}
         <div className="flex rounded-sm bg-stone-700">
-          <span className="my-auto pr-1 text-green-300 text-sm md:text-lg">[TheScientist-137]$</span>
+          <span className="my-auto px-1 text-green-300 text-sm md:text-lg">[TheScientist-137]$</span>
           <input
             ref={inputRef}
             type="text"
             value={input}
             onChange={handleChange}
             onKeyDown={handleKeyDown}
-            className="w-full outline-none text-md md:text-lg"
+            className="ml-1 outline-none text-md md:text-lg"
           />
-          <span className="blink" />
         </div>
       </div>
     </div>

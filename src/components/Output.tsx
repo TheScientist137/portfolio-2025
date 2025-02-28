@@ -5,15 +5,16 @@ type props = {
 }
 
 export default function Output({ outputLine }: props) {
- // Show input command outpout
  const prompt = "[TheScientist-137]$ >";
-
- // Si es un string, representa un comando ingresado por el usuario
+ 
+ // output line = string case
  if (typeof outputLine === "string") {
+  // not found line
   if (outputLine.startsWith("Command not found")) {
-   return <p className="pl-2 text-red-400 text-md md:text-lg">{outputLine}</p>; // Sin prompt, en rojo
+   return <p className="pl-2 text-red-400 text-md md:text-lg">{outputLine}</p>;
   }
 
+  // prompt line
   return (
    <p className="text-md md:text-lg">
     <span className="text-green-300">{prompt}</span>
@@ -22,7 +23,7 @@ export default function Output({ outputLine }: props) {
   );
  }
 
- // Show result output
+ // output line = command case
  return (
   <div className="text-md md:text-lg">
    <p className="px-2">{outputLine.description}</p>
